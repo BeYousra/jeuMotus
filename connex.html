@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOTUS</title>
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <style>
+        body{
+            background-image: url(img/siteM.png);
+            background-position-x: center;
+            background-clip: padding-box;
+        }
+        * {
+          box-sizing: border-box;
+        }
+        
+        input[type=email], [type=password], select{
+          width: 100%;
+          padding: 12px;
+          border: 1px solid #ccc; 
+          border-radius: 4px;
+          resize: vertical;
+        }
+        label {
+          padding: 12px 12px 12px 0;
+          display: inline-block;
+        }
+        
+        input[type=submit], [type=reset], button {
+          background-color: #091954;
+          color: #A7FF84;
+          padding: 12px 20px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          float: right;
+        }
+        
+        input[type=submit]:hover {
+          background-color: #096971;
+        }
+        input[type=reset]:hover {
+          background-color: #b94545;
+        }
+        .container {
+          border-radius: 5px;
+          padding: 20px;
+          margin: 0;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%,-50%);
+        }
+        #p {background-color:rgba(180, 180, 180, 0.3);}
+        .col-25 {
+          float: left;
+          width: 25%;
+          margin-top: 6px;
+        }
+        
+        .col-75 {
+          float: left;
+          width: 75%;
+          margin-top: 6px;
+        }
+        
+        /* Clear floats after the columns */
+        .row::after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+        
+        /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 600px) {
+          .col-25, .col-75, input[type=submit] {
+            width: 100%;
+            margin-top: 0;
+          }
+        }
+    </style>
+</head>
+<body>
+    <script src="js/connex.js"></script>
+    <div class="container" id="p">
+        <form id="form" name="form" action="" method="POST" autocomplete="on" onsubmit="return validationConnex();">
+        <div class="row">
+          <div class="col-25">
+            <label for="email">Email</label>
+          </div>
+          <div class="col-75">
+            <input type="email" id="email" name="email" placeholder="Votre adresse mail..." required>
+          </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-25">
+            <label for="password">Mot de passe</label>
+          </div>
+          <div class="col-75">
+            <input type="password" id="password" name="password" placeholder="Votre mot de passe..." required>
+          </div>
+        </div>
+    
+        <br>
+        <div class="row">
+          <div class="col-25">
+              <input type="reset" value="Effacer">
+          </div>
+          <div class="col-75">
+              <input type="submit" value="Envoyer">
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <button onclick="retourPrecedent()">Retour</button>
+            </div>
+        </div>
+        </form>
+      </div>
+</body>
+</html>
